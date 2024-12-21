@@ -1,4 +1,4 @@
-import "./styles.css";
+
 import SellerManageGrid from "./SellerManageGrid";
 
 export default function App() {

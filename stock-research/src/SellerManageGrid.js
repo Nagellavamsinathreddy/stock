@@ -64,7 +64,7 @@ export default function StockMarketGrid() {
             width: 400,
             headerAlign: "center",
             align: "center",
-            valueFormatter: ({ value }) => new Intl.NumberFormat().format(value),
+            //valueFormatter: ({ value }) => new Intl.NumberFormat()?.format(value),
         },
         {
             field: "AV",
@@ -72,7 +72,7 @@ export default function StockMarketGrid() {
             width: 400,
             headerAlign: "center",
             align: "center",
-            valueFormatter: ({ value }) => value.toFixed(4),
+            valueFormatter: ({ value }) => value?.toFixed(4),
         },
     ];
 
