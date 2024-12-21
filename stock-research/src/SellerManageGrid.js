@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar, GridToolbarExport } from "@mui/x-data-grid";
 import { RawJson } from "./RawData";
 
 export default function StockMarketGrid() {
@@ -64,7 +64,6 @@ export default function StockMarketGrid() {
             width: 400,
             headerAlign: "center",
             align: "center",
-            //valueFormatter: ({ value }) => new Intl.NumberFormat()?.format(value),
         },
         {
             field: "AV",
@@ -134,15 +133,18 @@ export default function StockMarketGrid() {
                     />
                 </div>
             </div>
-            <div style={{ height: 300, width: '100%' }}><DataGrid
-                columns={columns}
-                rows={filteredRows}
-                pageSize={5}
-                rowsPerPageOptions={[5]}
-                disableSelectionOnClick
-                autoHeight
-                components={{ Toolbar: GridToolbar }}
-            /></div>
+
+            <div style={{ height: 300, width: '100%' }}>
+                <DataGrid
+                    columns={columns}
+                    rows={filteredRows}
+                    pageSize={5}
+                    rowsPerPageOptions={[5]}
+                    disableSelectionOnClick
+                    autoHeight
+                    slots={{ toolbar: GridToolbar }}
+                />
+            </div>
         </div>
     );
 }
